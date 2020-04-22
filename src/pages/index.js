@@ -38,19 +38,24 @@ const IndexPage = () => {
     
 
  const { data = [] } = response;
-const hasData = Array.isArray(data) && data.length > 0;
 
+ //check if valid
+const hasData = Array.isArray(data) && data.length > 0;
+//if not? 
 if ( !hasData ) return;
+
+
+//define feature and map through of the data and grab each country
 
 const geoJson = {
   type: 'FeatureCollection',
   features: data.map((country = {}) => {
-    const { countryInfo = {} } = country;
+    const { countryInfo = {} } = country;//grab the country info and create a geometry type based on lag and lat.
     const { lat, long: lng } = countryInfo;
     return {
       type: 'Feature',
       properties: {
-        ...country,
+        ...country,// add country detailes to  properties 
       },
       geometry: {
         type: 'Point',
@@ -63,7 +68,7 @@ const geoJson = {
 
 
 
-
+// this section is to show custom markers.
   function countryPointToLayer (feature = {}, latlng){
     const { properties = {} } = feature;
     let updatedFormatted;
@@ -79,14 +84,14 @@ const geoJson = {
 
     casesString = `${cases}`;
 
-    if ( cases > 10000 ) {
-      casesString = `${casesString.slice(0, -3)}k+`
+    if ( cases > 10000 ) {// show more than 10k cases on map
+      casesString = `${casesString.slice(0, -3)}k+` 
     }
 
     if ( updated ) {
       updatedFormatted = new Date(updated).toLocaleString();
     }
-
+//
     const html = `
       <span class="icon-marker">
         <span class="icon-marker-tooltip">
@@ -107,13 +112,13 @@ const geoJson = {
         className: 'icon',
         html
       }),
-      riseOnHover: true
+      riseOnHover: true// when you hover, it raises info about selected country
     });
   }
 ;
 
 
-    const geoJsonLayers = new L.geoJSON(geoJson,  { 
+    const geoJsonLayers = new L.geoJSON(geoJson,  {  //add it to leaflet.
       pointToLayer: countryPointToLayer
 
     });
