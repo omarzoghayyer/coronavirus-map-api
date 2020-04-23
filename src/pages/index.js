@@ -79,10 +79,14 @@ const geoJson = {
       updated,
       cases,
       deaths,
-      recovered
+      recovered,
+      critical,
+      continent,
+      todayDeaths,
     } = properties
 
     casesString = `${cases}`;
+   
 
     if ( cases > 10000 ) {// show more than 10k cases on map
       casesString = `${casesString.slice(0, -3)}k+` 
@@ -97,10 +101,13 @@ const geoJson = {
         <span class="icon-marker-tooltip">
           <h2>${country}</h2>
           <ul>
-            <li><strong>Confirmed:</strong> ${cases}</li>
-            <li><strong>Deaths:</strong> ${deaths}</li>
+          <li><strong>Cases :</strong> ${cases}</li>
+          <li><strong> Today Deaths:</strong> ${todayDeaths}</li>
+          <li><strong>Continent:</strong> ${continent}</li>
+          <li><strong>Critical:</strong> ${critical}</li>
+          <li><strong>Deaths:</strong> ${deaths}</li>
             <li><strong>Recovered:</strong> ${recovered}</li>
-            <li><strong>Last Update:</strong> ${updatedFormatted}</li>
+            <li><strong>Last Updated:</strong> ${updatedFormatted}</li>
           </ul>
         </span>
         ${ casesString }
