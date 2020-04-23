@@ -1,6 +1,7 @@
 # 🍃 Gatsby Leaflet Starter
+![alt text](https://github.com/omarzoghayyer/coronavirus-map-api/blob/master/src/assets/images/Screen%20Shot%202020-04-21%20at%2010.20.42%20PM.png?raw=true)
 
-Jumpstart your next Gatsby mapping project with Leaflet!
+
 
 ## ⚡ Quick Deploy
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/colbyfayock/gatsby-starter-leaflet) [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/colbyfayock/gatsby-starter-leaflet)
