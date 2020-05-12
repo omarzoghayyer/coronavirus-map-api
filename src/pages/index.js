@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import L from 'leaflet';
 import axios from 'axios'
-
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Map from 'components/Map'; 
@@ -101,11 +100,11 @@ const geoJson = {
         <span class="icon-marker-tooltip">
           <h2>${country}</h2>
           <ul>
-          <li><strong>Cases :</strong> ${cases}</li>
-          <li><strong> Today Deaths:</strong> ${todayDeaths}</li>
-          <li><strong>Continent:</strong> ${continent}</li>
-          <li><strong>Critical:</strong> ${critical}</li>
-          <li><strong>Deaths:</strong> ${deaths}</li>
+            <li><strong>Cases :</strong> ${cases}</li>
+            <li><strong>Today's Deaths:</strong> ${todayDeaths}</li>
+            <li><strong>Continent:</strong> ${continent}</li>
+            <li><strong>Critical:</strong> ${critical}</li>
+            <li><strong>Deaths:</strong> ${deaths}</li>
             <li><strong>Recovered:</strong> ${recovered}</li>
             <li><strong>Last Updated:</strong> ${updatedFormatted}</li>
           </ul>
